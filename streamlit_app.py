@@ -8,12 +8,14 @@ from sklearn.neighbors import KNeighborsClassifier
 import category_encoders as ce
 import plotly.express as px
 
+
+st.set_page_config(page_title='🐧 Penguin Classifier', layout='wide')
+st.title("🐧 Датасет Penguins - Обучение и предсказание")
+st.write('## Работа с датасетом пингвинов')
+
 url = "https://raw.githubusercontent.com/dataprofessor/data/master/penguins_cleaned.csv"
-
-st.title("🐧 Датасет Penguins")
-
 
 df=pd.read_csv(url)
 
-st.write("Данные из GitHub:")
-st.dataframe(df)
+st.subheader('10 случайных строк')
+st.dataframe(df.sample(10), use_container_width=True)
