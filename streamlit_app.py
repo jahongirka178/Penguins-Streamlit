@@ -61,5 +61,5 @@ st.write('### Сравнение моделей по точности')
 st.table(pd.DataFrame(results))
 
 st.sidebar.header('Предсказание по параметрам')
-
+island_input = st.sidebar.selectbox('Остров', df['island'].unique())
 
