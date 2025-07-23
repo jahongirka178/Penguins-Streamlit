@@ -37,7 +37,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_
 
 
 encoder = ce.TargetEncoder(cols=['island','sex'])
-X_train_encoded = encoder.fit_transoform(X_train, y_train)
+X_train_encoded = encoder.fit_transform(X_train, y_train)
 X_test_encoded = encoder.transform(X_test)
 
 st.write('After encoding')
