@@ -62,4 +62,13 @@ st.table(pd.DataFrame(results))
 
 st.sidebar.header('Предсказание по параметрам')
 island_input = st.sidebar.selectbox('Остров', df['island'].unique())
+sex_input = st.sidebar.selectbox('Пол', df['sex'].unique())
+
+
+user_input = pd.DataFrame([{
+  'island': island_input,
+  'sex': sex_input
+}])
+
+st.dataframe(user_input, use_container_width=True)
 
