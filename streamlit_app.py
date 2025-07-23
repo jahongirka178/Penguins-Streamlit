@@ -13,6 +13,8 @@ st.write("Данные из GitHub:")
 st.dataframe(df)
 
 
+
+'''
 x_axis = st.selectbox("Выберите переменную по оси X", df.select_dtypes(include='number').columns)
 y_axis = st.selectbox("Выберите переменную по оси Y", df.select_dtypes(include='number').columns, index=1)
 
@@ -27,3 +29,4 @@ fig = px.scatter(
 )
 
 st.plotly_chart(fig)
+'''
