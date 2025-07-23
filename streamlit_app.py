@@ -19,3 +19,14 @@ df=pd.read_csv(url)
 
 st.subheader('10 случайных строк')
 st.dataframe(df.sample(10), use_container_width=True)
+
+st.subheader('Визуализация')
+
+col1, col2 = st.columns(2)
+with col1:
+  fig1 = px.histogram(df, x='species', color='island', barmode='group', title='Распределение видов по островам')
+  st.plotly_chart(fig1, use_container_width=True)
+with col2:
+  fig1 = px.scatter(df, x='bill_length_mm', y='flipper_length_mm' color='species', barmode='group', title='Длина клюва vs. Длина крыла')
+  st.plotly_chart(fig2, use_container_width=True)
+
