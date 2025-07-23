@@ -41,3 +41,14 @@ X_train_encoded = encoder.fit_transform(X_train, y_train)
 X_test_encoded = encoder.transform(X_test)
 
 st.write('After encoding')
+
+models = {'Decision Tree': DecisionTreeClassifier(random_state=42),
+          'KNN': KNeighborsClassifier
+         }
+
+results = []
+
+for name, model in model.items():
+    model.fit(X_train_encoded, y_train)
+    acc_train = accuracy_score(y_train, model.predict(X_train_encoded))
+    acc_test =  accuracy_score(y_test, model.predict(X_test_endcoded))
