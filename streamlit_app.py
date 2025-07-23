@@ -42,7 +42,7 @@ X_test_encoded = encoder.transform(X_test)
 
 
 models = {'Decision Tree': DecisionTreeClassifier(random_state=42),
-          'KNN': KNeighborsClassifier
+          'KNN': KNeighborsClassifier(4)
          }
 
 results = []
