@@ -48,13 +48,14 @@ models = {'Decision Tree': DecisionTreeClassifier(random_state=42),
 results = []
 
 for name, model in models.items():
-    model.fit(X_train_encoded, y_train)
-    acc_train = accuracy_score(y_train, model.predict(X_train_encoded))
-    acc_test =  accuracy_score(y_test, model.predict(X_test_encoded))
-    st.write(f'{acc_train = }')
-    st.write(f'{acc_test = }')
+  model.fit(X_train_encoded, y_train)
+  acc_train = accuracy_score(y_train, model.predict(X_train_encoded))
+  acc_test =  accuracy_score(y_test, model.predict(X_test_encoded))
+  results.append({
+    'Model': name,
+    'Train Accuracy': round(acc_train, 2),
+    'Test Accuracy': round(acc_test, 2)
+  })
 
-
-
-
-st.write('After FOR')
+st.write('### Сравнение моделей по точности')
+st.table(pd.DataFrame(results))
