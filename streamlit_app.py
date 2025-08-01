@@ -10,7 +10,7 @@ import plotly.express as px
 
 st.set_page_config(page_title='🐧 Penguin Classifier', layout='wide')
 st.title("🐧 Датасет Penguins - Обучение и предсказание")
-st.header('## Работа с датасетом пингвинов')
+st.header('Работа с датасетом пингвинов')
 
 url = "https://raw.githubusercontent.com/dataprofessor/data/master/penguins_cleaned.csv"
 df = pd.read_csv(url)
