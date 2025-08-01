@@ -16,11 +16,11 @@ url = "https://raw.githubusercontent.com/dataprofessor/data/master/penguins_clea
 df = pd.read_csv(url)
 
 # Выведем 10 случайных строк
-st.subheader('10 случайных строк')
+st.write('## 10 случайных строк')
 st.dataframe(df.sample(10), use_container_width=True)
 
 # Графики
-st.subheader('Визуализация')
+st.write('## Визуализация')
 col1, col2 = st.columns(2)
 
 with col1:
@@ -30,6 +30,8 @@ with col2:
     fig2 = px.scatter(df, x='bill_length_mm', y='flipper_length_mm', color='species',
                       title='Длина клюва vs. Длина крыла')
     st.plotly_chart(fig2, use_container_width=True)
+
+
 
 # Работа с данными
 X = df.drop(columns=['species'])
@@ -58,7 +60,7 @@ for name, model in models.items():
         'Test Accuracy': round(acc_test, 2)
     })
 
-st.write('### Сравнение моделей по точности')
+st.write('## Сравнение моделей по точности')
 st.table(pd.DataFrame(results))
 
 '''
